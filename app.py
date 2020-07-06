@@ -8,6 +8,12 @@ from time import sleep
 import fasttext
 
 
+respuestas = {
+        'abuso_sexual': 'Creo que me estás describiendo un caso de abuso sexual.',
+        'acoso_laboral': 'Creo que me estás describiendo un caso de acoso laboral',
+        'despido_injustificado': 'Creo que me estás describiendo unc aso de despido injustificado'
+        }
+
 def load():
     print('\nCargando modelo', end='')
     model = fasttext.load_model('model/model.bin')
@@ -53,7 +59,7 @@ def main():
         print('Usuario: ', end='')
         text = raw_input().decode('utf-8')
         pred = model.predict(text)[0][0][9:]
-        print(pred)
+        print(respuestas[pred], '\n')
 
 
 if __name__ == '__main__':
