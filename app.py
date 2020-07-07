@@ -10,18 +10,13 @@ import fasttext
 
 respuestas = {
         'abuso_sexual': 'Creo que me estás describiendo un caso de abuso sexual.',
-        'acoso_laboral': 'Creo que me estás describiendo un caso de acoso laboral',
-        'despido_injustificado': 'Creo que me estás describiendo unc aso de despido injustificado'
+        'acoso_laboral': 'Creo que me estás describiendo un caso de acoso laboral.',
+        'despido_injustificado': 'Creo que me estás describiendo un caso de despido injustificado.'
         }
 
 def load():
-    print('\nCargando modelo', end='')
+    print('\nCargando modelo.')
     model = fasttext.load_model('model/model.bin')
-    for i in range(5):
-        sleep(.2)
-        print('.', end='')
-        sys.stdout.flush()
-    print('\n')
     return model
 
 
